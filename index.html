@@ -1,98 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Expense Tracker</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-    <div class="container">
-        <header>
-            <h1>💰 Expense Tracker</h1>
-            <p>Manage your expenses efficiently</p>
-        </header>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Fresh recipe page with a delicious seasonal meal, ingredient list, and easy cooking steps."
+    />
+    <title>Fresh Harvest Bowl | Recipe Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="page-shell">
+      <header class="topbar">
+        <div class="brand-wrap">
+          <div class="brand-mark">F</div>
+          <span>FreshBite</span>
+        </div>
 
-        <main>
-            <section class="add-expense">
-                <h2>Add New Expense</h2>
-                <form id="expenseForm">
-                    <div class="form-group">
-                        <label for="description">Description</label>
-                        <input type="text" id="description" placeholder="e.g., Groceries" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="amount">Amount</label>
-                        <input type="number" id="amount" placeholder="0.00" step="0.01" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="category">Category</label>
-                        <select id="category" required>
-                            <option value="">Select a category</option>
-                            <option value="Food">Food</option>
-                            <option value="Transport">Transport</option>
-                            <option value="Entertainment">Entertainment</option>
-                            <option value="Utilities">Utilities</option>
-                            <option value="Health">Health</option>
-                            <option value="Education">Education</option>
-                            <option value="Shopping">Shopping</option>
-                            <option value="Other">Other</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <label for="date">Date</label>
-                        <input type="date" id="date" required>
-                    </div>
-                    <button type="submit" class="btn-add">Add Expense</button>
-                </form>
-            </section>
+        <nav class="main-nav" aria-label="Main navigation">
+          <a href="#recipe">Recipe</a>
+          <a href="#ingredients">Ingredients</a>
+          <a href="#steps">Steps</a>
+          <a href="#reviews">Reviews</a>
+        </nav>
 
-            <section class="summary">
-                <h2>Summary</h2>
-                <div class="summary-stats">
-                    <div class="stat-card">
-                        <h3>Total Expenses</h3>
-                        <p class="stat-value" id="totalExpenses">$0.00</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>This Month</h3>
-                        <p class="stat-value" id="monthExpenses">$0.00</p>
-                    </div>
-                    <div class="stat-card">
-                        <h3>This Week</h3>
-                        <p class="stat-value" id="weekExpenses">$0.00</p>
-                    </div>
-                </div>
-            </section>
+        <button class="cta-button" id="favoriteBtn" type="button">Save recipe</button>
+      </header>
 
-            <section class="expenses-list">
-                <h2>Expenses</h2>
-                <div class="filters">
-                    <input type="text" id="filterCategory" placeholder="Filter by category...">
-                    <button id="clearAll" class="btn-clear">Clear All</button>
-                </div>
-                <table class="expenses-table">
-                    <thead>
-                        <tr>
-                            <th>Date</th>
-                            <th>Description</th>
-                            <th>Category</th>
-                            <th>Amount</th>
-                            <th>Action</th>
-                        </tr>
-                    </thead>
-                    <tbody id="expensesTableBody">
-                    </tbody>
-                </table>
-                <p class="no-expenses" id="noExpenses">No expenses yet. Add one to get started!</p>
-            </section>
-        </main>
+      <main>
+        <section class="hero" id="recipe">
+          <div class="hero-copy">
+            <span class="eyebrow">Healthy & delicious</span>
+            <h1>Golden Harvest Bowl</h1>
+            <p>
+              A colorful mix of roasted vegetables, quinoa, avocado, and a zesty lemon-tahini drizzle.
+              Packed with flavor, fiber, and a naturally vibrant feel.
+            </p>
 
-        <footer>
-            <p>&copy; 2024 Expense Tracker. All rights reserved.</p>
-        </footer>
+            <div class="meta-row">
+              <div>
+                <span class="meta-label">Prep</span>
+                <strong>20 min</strong>
+              </div>
+              <div>
+                <span class="meta-label">Cook</span>
+                <strong>25 min</strong>
+              </div>
+              <div>
+                <span class="meta-label">Serves</span>
+                <strong>2-3</strong>
+              </div>
+              <div>
+                <span class="meta-label">Level</span>
+                <strong>Easy</strong>
+              </div>
+            </div>
+
+            <div class="actions">
+              <button class="cta-button primary" type="button">Get the recipe</button>
+              <button class="ghost-button" type="button">Share</button>
+            </div>
+          </div>
+
+          <div class="hero-visual" aria-label="Recipe dish preview">
+            <div class="image-card">
+              <img
+                src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=900&q=80"
+                alt="Healthy grain bowl with vegetables and greens"
+              />
+            </div>
+            <div class="floating-badge top">4.9/5 rating</div>
+            <div class="floating-badge bottom">High protein</div>
+          </div>
+        </section>
+
+        <section class="feature-strip" aria-label="Recipe highlights">
+          <article>
+            <span>🌿</span>
+            <div>
+              <h3>Plant-powered</h3>
+              <p>Natural ingredients and wholesome grains</p>
+            </div>
+          </article>
+          <article>
+            <span>⏱️</span>
+            <div>
+              <h3>Quick prep</h3>
+              <p>Ready in under 45 minutes</p>
+            </div>
+          </article>
+          <article>
+            <span>🥗</span>
+            <div>
+              <h3>Fresh taste</h3>
+              <p>Bright flavors with a nourishing finish</p>
+            </div>
+          </article>
+        </section>
+
+        <section class="recipe-layout">
+          <div class="ingredients-panel" id="ingredients">
+            <div class="panel-header">
+              <span class="chip">Ingredients</span>
+              <h2>What you need</h2>
+            </div>
+
+            <ul class="ingredient-list">
+              <li>1 cup quinoa, cooked</li>
+              <li>1 sweet potato, cubed</li>
+              <li>1 cup broccoli florets</li>
+              <li>1 carrot, sliced</li>
+              <li>1 avocado, sliced</li>
+              <li>1/2 cup chickpeas, roasted</li>
+              <li>2 cups baby spinach</li>
+              <li>1 tbsp olive oil</li>
+              <li>1 lemon, juiced</li>
+              <li>2 tbsp tahini</li>
+              <li>1 tsp maple syrup</li>
+              <li>Salt and pepper to taste</li>
+            </ul>
+          </div>
+
+          <div class="steps-panel" id="steps">
+            <div class="panel-header">
+              <span class="chip alt">Method</span>
+              <h2>How to make it</h2>
+            </div>
+
+            <ol class="steps-list">
+              <li>Preheat the oven to 220°C and roast the sweet potato, broccoli, and carrot with olive oil, salt, and pepper for 20–25 minutes.</li>
+              <li>Whisk together lemon juice, tahini, maple syrup, and a splash of water until the dressing turns smooth and creamy.</li>
+              <li>Arrange quinoa, spinach, roasted vegetables, avocado, and chickpeas in a large serving bowl or individual bowls.</li>
+              <li>Drizzle with the lemon-tahini dressing and toss gently before serving.</li>
+              <li>Top with herbs, pumpkin seeds, or a pinch of chili flakes for extra texture and flavor.</li>
+            </ol>
+          </div>
+        </section>
+
+        <section class="nutrition-section">
+          <div class="nutrition-box">
+            <h2>Nutrition snapshot</h2>
+            <div class="nutrition-grid">
+              <div>
+                <strong>420</strong>
+                <span>Calories</span>
+              </div>
+              <div>
+                <strong>14g</strong>
+                <span>Protein</span>
+              </div>
+              <div>
+                <strong>11g</strong>
+                <span>Fiber</span>
+              </div>
+              <div>
+                <strong>Vegan</strong>
+                <span>Diet</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="story-box">
+            <span class="chip">Why it works</span>
+            <h2>Simple ingredients, big flavor</h2>
+            <p>
+              This bowl balances earthy roasted vegetables with creamy avocado and a bright citrus dressing.
+              It is nourishing, easy to customize, and works perfectly for lunches, meal prep, or a light dinner.
+            </p>
+          </div>
+        </section>
+
+        <section class="reviews" id="reviews">
+          <div class="section-title-wrap">
+            <span class="eyebrow">From the kitchen</span>
+            <h2>People love this recipe</h2>
+          </div>
+
+          <div class="review-grid">
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“The flavor is incredible and it feels so fresh. Perfect for a busy weeknight.”</p>
+              <h3>— Maya R.</h3>
+            </article>
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“I meal-prepped this for the week and it still tasted amazing on day three.”</p>
+              <h3>— Daniel T.</h3>
+            </article>
+            <article class="review-card">
+              <div class="stars">★★★★★</div>
+              <p>“Such a colorful bowl and the tahini dressing is the star. Will definitely make it again.”</p>
+              <h3>— Sara L.</h3>
+            </article>
+          </div>
+        </section>
+      </main>
+
+      <footer class="site-footer">
+        <p>FreshBite © <span id="year"></span> • Made for better meals</p>
+      </footer>
     </div>
 
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
